@@ -77,10 +77,10 @@ $(document).ready(function(){
     $("#die-roll-1").empty();
     firstPlayer.findWinner();
   });
-  $("#playerTwoHold").click(function(event){
+  $("button#playerTwoHold").click(function(event){
     secondPlayer.holdGame();
-    $("#total-score-1").text(secondPlayer.totalScore);
-    $("#total-score-1").text(secondPlayer.totalScore);
+    $("#total-score-2").text(secondPlayer.totalScore);
+    $("#round-total-2").empty();
     $("#die-roll-1").empty();
     secondPlayer.findWinner();
   });
