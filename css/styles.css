@@ -27,7 +27,18 @@ body {
     overflow: hidden;
     border-radius: 20px;
 }
-.jumbotron {
+.jumbotron{
+  background-color: #fff;
+  opacity: 0.9;
+}
+input[type="text"]{
+  width: 30%;
+  background-color:rgba(0, 0, 0, 0);
+  opacity: 0.7;
+  align-items: center;
+  margin-left: 30%;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 img {
