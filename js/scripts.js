@@ -22,9 +22,9 @@ ActivePlayer.prototype.roll1=function(){
   }
 }
 ActivePlayer.prototype.holdGame=function(){
-  this.totalScore+=this.currentScore;
+  this.totalScore += this.currentScore;
   this.currentScore=0;
-  elert(this.playerName+",Change player");
+  alert(this.playerName+",Change player");
 }
 ActivePlayer.prototype.findWinner=function(){
   if(this.totalScore>=100){

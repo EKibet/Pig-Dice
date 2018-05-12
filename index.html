@@ -9,23 +9,23 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container">
       <div class="wrapper">
         <div class="container-fluid">
           <div class="jumbotron">
             <h1>Pig Dice</h1>
             <form class="form-group" id="playerOne" action="index.html" method="post">
-            <input type="text" class="player1 form-control" placeholder="Enter Player One Name" value="">
+            <input type="text"  class="player1 form-control required" placeholder="Enter Player One Name" value="">
             </form>
             <form class="form-group" id="playerTwo" action="index.html" method="post">
-            <input type="text" class="player2 form-control" placeholder="Enter Player Two Name" value="">
+            <input type="text" class="required player2 form-control" placeholder="Enter Player Two Name" value="">
             <button type="submit" id="play" class="btn btn-primary" name="button">Play</button>
             </form>
           </div>
         </div>
         <div class="player-console container">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12">
               <h2>Player One <span id="player1Name"></span> </h2>
               <button id="playerOneRoll" class="btn btn-default" name="button">Roll The Dice</button>
               <button id="playerOneHold" class="btn btn-success" name="button">Hold</button>
@@ -33,7 +33,7 @@
               <p>Current Score: <span id="round-total-1"></span> </p>
               <p>Round Score:<span id="total-score-1"></span> </p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12">
               <h2>Player One <span id="player2Name"></span> </h2>
               <button id="playerTwoRoll" class="btn btn-default" name="button">Roll The Dice</button>
               <button id="playerTwoHold" class="btn btn-success" name="button">Hold</button>
