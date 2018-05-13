@@ -41,20 +41,6 @@ var resetField=function(){
   $(".player1").val("");
   $(".player2").val("");
 }
-function validation(){
-  var player1Name=document.forms["players"]["Player1"];
-  var player2Name=document.forms["players"]["Player2"];
-  if(player1.value=""){
-    window.alert("To proceed,Please enter Player One name");
-    return false;
-  }
-  if(player2.value=""){
-    window.alert("To proceed,Please enter Player Two name");
-    return false;
-  }
-  return true;
-}
-
 
 //UI interface Logic
 
