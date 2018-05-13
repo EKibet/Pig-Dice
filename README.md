@@ -13,13 +13,13 @@ _This is a web application where two users can play Pig Dice against each other.
 ### Specifications
 | Behavior        | Input           | Outcome  |
 | ------------- |:-------------:| -----:|
-| Player 1 inputs name and Player 2 inputs name, and clicks PLAY button | Player 1: Edgar / Player 2: Vincent / Click PLAY button
-| Player 1 clicks Roll The Dice button | Click Roll The Dice button | Dice rolls and number is generated
-| If Player 1 rolls any number other than 1, that roll is added to Current | Current Score = 2 | Round Score = 2 |
-| If Player 1 rolls a 1, no score is added and round for Player 1 ends | Current Score = 1 | Round Score = 2 / Round score = 2 / Player 2 begins |
-| Repeat for Player 2 | Current Score = 1 | Round Score = 0 / Round score = 0 / Player 1 begins |
-| When a player's Round/Global score reaches 100 or more, game ends | Player 1 total score = 100 | Winner |
-
+| Player 1 inputs name and Player 2 inputs name, and clicks start button | Player 1: Edgar / Player 2: Vincent / Click PLAY | Game launched |
+| Player 1 clicks Roll button | Click Roll The Dice button | Dice rolls and number is generated
+| If Player 1 rolls any number other than 1, that roll is added to Current Score | Roll = 2 | Current Score = 2  |
+| If Player 1 rolls a 1, no score is added and round for Player 1 ends | Roll = 1 | Current Score = 0 / Round Score = 0 / Player 2 begins |
+| Player 2 clicks on Roll The Dice button| Roll = 1 | Current Score = 0 / Round Score = 0 / Player 1 begins |
+|When a Player clicks hold button|CURRENT score gets added to his/her ROUND score. |It's the next player's turn
+| When a player's Round Score reaches 100 or more, game ends and winner page shows | Player 1 Round Score = 100 | Winner Alert Message|
 
 #### Known Bugs
 No known bugs.
