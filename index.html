@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Pig Dice</title>
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href='https://fonts.googleapis.com/css?family=Caesar Dressing' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="js/jquery-3.3.1.js"></script>
@@ -16,30 +18,44 @@
     <div class="container">
       <div class="wrapper">
         <div class="container-fluid">
-          <div class="jumbotron">
+          <div class="jumbo">
             <h1>Pig Dice</h1>
-            <form class="form-group" name="players" id="players" onsubmit="return validateForm()"  method="post">
-            <input type="text"  class="player1 form-control"  name="Player1" required placeholder="Enter Player One Name" value="">
-            <input type="text" class="required player2 form-control" required name="Player2" placeholder="Enter Player Two Name" value="">
-            </form>
-            <button type="submit" class="btn btn-primary play" name="submit">Play</button>
+            <div class="row">
+              <div class="col-md-4">
+                <form class="form-group" name="players" id="players" onsubmit="return validateForm()"  method="post">
+                <input type="text" required class="player1 form-control"  name="Player1"  placeholder="Enter Player One Name" value=""><br>
+                <input type="text" required class=" player2 form-control"  name="Player2" placeholder="Enter Player Two Name" value="">
+                </form>
+                <button type="submit" id="play" class="btn btn-primary play" name="submit">Play</button>
+              </div>
+              <div class="col-md-8 float-right " id="rules">
+                <h2>GAME RULES:</h2>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&#10003;The game has 2 players, playing in rounds</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&#10003;In each turn, a player rolls a dice as many times as he/she whishes. Each result get added to his CURRENT score</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&#10003;BUT, if the player rolls a 1, all his/her CURRENT score gets lost. After that, it's the next player's turn</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&#10003;The player can choose to 'Hold', which means that his CURRENT score gets added to his/her ROUND score. After that, it's the next player's turn</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&#10003;The first player to reach 100 points on ROUND score wins the game</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&#10003;To start the game,fill in the fields then click on PLAY button</p>
+
+              </div>
+            </div>
           </div>
         </div>
         <div class="output container">
           <div class="row">
             <div class="col-md-6 col-sm-12" id="player1">
-              <h2>Player One <span id="player1Name"></span> </h2>
+              <h2>Player One: <span id="player1Name"></span> </h2>
               <button id="playerOneRoll" class="btn btn-default" name="button">Roll The Dice</button>
               <button id="playerOneHold" class="btn btn-success" name="button">Hold</button>
-              <h2>Your Dice Roll:<span id="die-roll-1"></span> </h2>
+              <h3>Your Dice Roll:<span id="die-roll-1"></span> </h3>
               <p>Current Score: <span id="round-total-1"></span> </p>
               <p>Round Score:<span id="total-score-1"></span> </p>
             </div>
             <div class="col-md-6 col-sm-12" id="player2">
-              <h2>Player Two <span id="player2Name"></span> </h2>
+              <h2>Player Two: <span id="player2Name"></span> </h2>
               <button id="playerTwoRoll" class="btn btn-default" name="button">Roll The Dice</button>
               <button id="playerTwoHold" class="btn btn-success" name="button">Hold</button>
-              <h2>Your Dice Roll:<span id="die-roll-2"></span> </h2>
+              <h3>Your Dice Roll:<span id="die-roll-2"></span> </h3>
               <p>Current Score: <span id="round-total-2"></span> </p>
               <p>Round Score:<span id="total-score-2"></span> </p>
             </div>

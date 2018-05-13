@@ -8,7 +8,7 @@ var dieRoll=function(){
 function ActivePlayer(round){
   this.roll=0;
   this.currentScore=0;
-  this.totalScore=0;
+  this.globalScore=0;
   this.round=round;
   this.playerName;
 }
@@ -22,19 +22,19 @@ ActivePlayer.prototype.roll1=function(){
   }
 }
 ActivePlayer.prototype.holdGame=function(){
-  this.totalScore += this.currentScore;
+  this.globalScore += this.currentScore;
   this.currentScore=0;
   alert(this.playerName+",Change player");
 }
 ActivePlayer.prototype.findWinner=function(){
-  if(this.totalScore>=100){
+  if(this.globalScore>=100){
     alert("Bravo! "+this.playerName+",you are the winner!");
   }
 }
 ActivePlayer.prototype.newGame=function(){
   this.roll=0;
   this.currentScore=0;
-  this.totalScore=0;
+  this.globalScore=0;
   this.playerName="";
 }
 var resetField=function(){
@@ -64,24 +64,10 @@ $(document).ready(function(){
     firstPlayer= new ActivePlayer(true);
     secondPlayer= new ActivePlayer(false);
     var player1Name=$(".player1").val();
-    if (player1Name="") {
-      alert("Name must be filled out");
-      return false;
-    }
-    else {
-      return $("#player1Name").text(player1Name);
+    $("#player1Name").text(player1Name);
 
-    }
     var player2Name=$(".player2").val();
-    if (player2Name="") {
-      alert("Name must be filled out");
-      return false;
-
-    }
-    else {
-      return $("#player2Name").text(player2Name);
-
-    }
+    $("#player2Name").text(player2Name);
     firstPlayer.playerName=player1Name;
     secondPlayer.playerName=player2Name;
   });
@@ -99,14 +85,14 @@ $(document).ready(function(){
   });
   $("button#playerOneHold").click(function(event){
     firstPlayer.holdGame();
-    $("#total-score-1").text(firstPlayer.totalScore);
+    $("#total-score-1").text(firstPlayer.globalScore);
     $("#round-total-1").empty();
     $("#die-roll-1").empty();
     firstPlayer.findWinner();
   });
   $("button#playerTwoHold").click(function(event){
     secondPlayer.holdGame();
-    $("#total-score-2").text(secondPlayer.totalScore);
+    $("#total-score-2").text(secondPlayer.globalScore);
     $("#round-total-2").empty();
     $("#die-roll-1").empty();
     secondPlayer.findWinner();
