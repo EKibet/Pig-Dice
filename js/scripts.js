@@ -41,20 +41,47 @@ var resetField=function(){
   $(".player1").val("");
   $(".player2").val("");
 }
+function validation(){
+  var player1Name=document.forms["players"]["Player1"];
+  var player2Name=document.forms["players"]["Player2"];
+  if(player1.value=""){
+    window.alert("To proceed,Please enter Player One name");
+    return false;
+  }
+  if(player2.value=""){
+    window.alert("To proceed,Please enter Player Two name");
+    return false;
+  }
+  return true;
+}
 
 
 //UI interface Logic
 
 $(document).ready(function(){
-  $("button#play").click(function(event){
+  $("button.play").click(function(event){
     event.preventDefault();
     firstPlayer= new ActivePlayer(true);
     secondPlayer= new ActivePlayer(false);
     var player1Name=$(".player1").val();
-    $("#player1Name").text(player1Name);
-    var player2Name=$(".player2").val();
-    $("#player2Name").text(player2Name);
+    if (player1Name="") {
+      alert("Name must be filled out");
+      return false;
+    }
+    else {
+      return $("#player1Name").text(player1Name);
 
+    }
+    var player2Name=$(".player2").val();
+    if (player2Name="") {
+      alert("Name must be filled out");
+      return false;
+
+    }
+    else {
+      return $("#player2Name").text(player2Name);
+
+    }
     firstPlayer.playerName=player1Name;
     secondPlayer.playerName=player2Name;
   });

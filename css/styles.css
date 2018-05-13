@@ -1,10 +1,4 @@
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 body {
     background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
     background-size: cover;
@@ -15,7 +9,11 @@ body {
     height: 100vh;
     color: #555;
 }
-
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .wrapper {
     width: 1000px;
     position: absolute;
@@ -46,6 +44,9 @@ input[type="text"]{
   font-weight: 400;
   width: 30%;
   margin-top: 10px;
+}
+.output{
+  margin-left: 10%;
 }
 img {
   margin-top: 10px;
